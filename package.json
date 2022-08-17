@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,11 @@
     "url": "https://github.com/achyutvardhan/Express/issues"
   },
   "homepage": "https://github.com/achyutvardhan/Express#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
   "dependencies": {
-    "bootstrap": "^5.2.0",
+    "express": "^4.18.1",
     "lodash": "^4.17.21"
   }
 }
