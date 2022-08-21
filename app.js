@@ -39,6 +39,9 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+// var bodyParser = require('body-parser')
+
+
 //----------------------------------------------------
 // we have to create separate routes for separate pages
 
@@ -46,8 +49,20 @@ const app = express()
 //     res.sendFile(path.join(__dirname,'public','index.html'))
 // })
 //--------------------------------------------------
-// set static folder
 
+//body parser middleware
+// app.use(bodyParser.urlencoded({ extended: false }))
+
+// // parse application/json
+// app.use(bodyParser.json())
+
+//or
+
+app.use(express.json());
+app.use(express.urlencoded({ extended : false}))
+
+//----------------------------------------------------
+// set static folder
 app.use(express.static(path.join(__dirname,'public')))
 
 
