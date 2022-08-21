@@ -36,19 +36,11 @@
 //     console.log('server is listening on port 5000....')
 // })
 
-
 const express = require('express')
-const path = require('path')
 const app = express()
 
-app.get(('/'),(req,res)=>{
-    res.sendFile(path.resolve(__dirname,))
-})
 
-app.all(('*'),(req,res)=>{
-    res.status(404).send('fucck offf')
-})
 
 app.listen(5000,()=>{
-    console.log('listning to 5000...')
+    console.log('listening to port 5000...')
 })
