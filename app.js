@@ -37,9 +37,22 @@
 // })
 
 const express = require('express')
+const path = require('path')
 const app = express()
+//----------------------------------------------------
+// we have to create separate routes for separate pages
+
+// app.get(('/'),(req,res)=>{
+//     res.sendFile(path.join(__dirname,'public','index.html'))
+// })
+//--------------------------------------------------
+// set static folder
+
+app.use(express.static(path.join(__dirname,'public')))
 
 
+// getting Members
+app.use('/api/members',require('./routes/api/members'))
 
 app.listen(5000,()=>{
     console.log('listening to port 5000...')
